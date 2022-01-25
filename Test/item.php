@@ -73,14 +73,14 @@ h1 {
 
 $name = "Billets d'avion";
 $price = "1000 €";
-$ticket = "./billet_avion.png";
+$picture_url = "./billet_avion.png";
 
  ?>
 
 <?php include 'header.php' ?>
 
 <h1> <?php echo $name; ?> </h1>
-<img src="<?php echo $ticket; ?>" alt="Billet">
+<img src="<?php echo $picture_url; ?>" alt="Billet">
 <p><?php echo $price; ?></p>
 
 <?php include 'footer.php' ?>
