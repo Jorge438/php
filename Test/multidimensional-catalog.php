@@ -143,7 +143,20 @@ $products = [
         <p> <?php echo $products["medel"]["weight"] ?> grammes </p>
     </div>
 
+    <p>
+
+        <?php foreach ($products as $player) {
+            foreach($player as $description => $detail) {
+                echo " $player | $description : $detail " . "<br>";
+            }
+             echo "<br>";
+        }
+        ?>
+    </p>
+
 </main>
+
+
 
 <?php include 'footer.php' ?>
 
