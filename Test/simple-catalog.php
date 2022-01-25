@@ -11,6 +11,15 @@
 <?php
     $products = ["iPhone", "iPad", "iMac"];
 ?>
+
+<p>
+
+<?php foreach ($products as $apple) {
+echo "$apple" . "<br>" ; 
+}
+?>
+</p>
+
 <p> <?php echo implode(",",$products); ?> </p>
 <p> ordre croissant : <?php
     asort($products);
@@ -18,6 +27,10 @@
 </p>
 <p> premier produit : <?php echo $products[0] ?> </p>
 <p> dernier produit : <?php echo $products[2] ?></p>
+
+
+
+
 
 </body>
 </html>
