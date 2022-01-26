@@ -77,6 +77,8 @@ $picture_url = "./billet_avion.png";
 
  ?>
 
+<?php include 'my-functions.php' ?>
+
 <?php include 'header.php' ?>
 
 <h1> <?php echo $name; ?> </h1>
