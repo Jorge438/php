@@ -94,7 +94,8 @@ img {
         "price" => format_price(79900),
         "price_excl_tax" => price_excluding_vat(format_price(79900)),
         "weight" => 110,
-        "discount" => null,
+        "discount" => 10,
+        "price_after_discount" => displayDiscountedPrice(format_price(79900),10),
         "picture_url" => "img/salas.jpg"
     ],
 
@@ -103,7 +104,8 @@ img {
         "price" => format_price(89900),
         "price_excl_tax" => price_excluding_vat(format_price(89900)),
         "weight" => 110,
-        "discount" => null,
+        "discount" => 5,
+        "price_after_discount" => displayDiscountedPrice(format_price(89900),5),
         "picture_url" => "img/sanchez.jpg"
     ],
 
@@ -112,7 +114,8 @@ img {
         "price" => format_price(54900),
         "price_excl_tax" => price_excluding_vat(format_price(54900)),
         "weight" => 110,
-        "discount" => null,
+        "discount" => 15,
+        "price_after_discount" => displayDiscountedPrice(format_price(54900),15),
         "picture_url" => "img/medel.jpg"
         ]
 
@@ -130,7 +133,8 @@ img {
         <img src=" <?php echo $products["sanchez"]["picture_url"] ?>" alt="">
         <p> <?php echo $products["sanchez"]["price"] ?> € TTC</p>
         <p> <?php echo $products["sanchez"]["price_excl_tax"] ?> € HT</p>
-        <p> <?php echo $products["sanchez"]["discount"]?></p>
+        <p> <?php echo $products["sanchez"]["discount"]?> % de réduction</p>
+        <p> <?php echo $products["sanchez"]["price_after_discount"]?> € apres réduction</p>
         <p> <?php echo $products["sanchez"]["weight"] ?> grammes </p>
     </div>
 
@@ -138,8 +142,9 @@ img {
         <h1> <?php echo $products["salas"]["name"] ?> </h1>
         <img src=" <?php echo $products["salas"]["picture_url"] ?>" alt="">
         <p> <?php echo $products["salas"]["price"] ?> € TTC</p>
-        <p> <?php echo $products["sanchez"]["price_excl_tax"] ?> € HT</p>
-        <p> <?php echo $products["salas"]["discount"]?></p>
+        <p> <?php echo $products["salas"]["price_excl_tax"] ?> € HT</p>
+        <p> <?php echo $products["salas"]["discount"]?> % de réduction</p>
+        <p> <?php echo $products["salas"]["price_after_discount"]?> € apres réduction</p>
         <p> <?php echo $products["salas"]["weight"] ?> grammes </p>
     </div>
 
@@ -147,8 +152,9 @@ img {
         <h1> <?php echo $products["medel"]["name"] ?> </h1>
         <img src=" <?php echo $products["medel"]["picture_url"] ?>" alt="">
         <p> <?php echo $products["medel"]["price"] ?> € TTC</p>
-        <p> <?php echo $products["sanchez"]["price_excl_tax"] ?> € HT</p>
-        <p> <?php echo $products["medel"]["discount"]?></p>
+        <p> <?php echo $products["medel"]["price_excl_tax"] ?> € HT</p>
+        <p> <?php echo $products["medel"]["discount"]?> % de réduction</p>
+        <p> <?php echo $products["medel"]["price_after_discount"]?> € apres réduction</p>
         <p> <?php echo $products["medel"]["weight"] ?> grammes </p>
     </div>
 
