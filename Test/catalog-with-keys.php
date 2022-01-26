@@ -81,7 +81,7 @@ img {
 <?php
     $salas = [
         "name" => "Marcelo Salas jersey",
-        "price" => 799,
+        "price" => format_price(79900),
         "weight" => 110,
         "discount" => null,
         "picture_url" => "img/salas.jpg"
@@ -89,18 +89,26 @@ img {
         
 ?>
 
-<?php ?>
+<?php 
+    function format_price($price_in_cents) {
+        $price_in_cents = $price_in_cents/100;
+        return $price_in_cents;
+    }
+?>
 
 <?php include 'header.php' ?>
 
 <main>
 
-    <div class="first">
+  <div class="first">
         <h1> <?php echo $salas["name"] ?> </h1>
         <img src=" <?php echo $salas["picture_url"] ?>" alt="">
         <p> <?php echo $salas["price"] ?> € </p>
+        <p> <?php echo $salas["discount"]?></p>
         <p> <?php echo $salas["weight"] ?> grammes </p>
-    </div>
+    </div> 
+
+    
 
 </main>
 
