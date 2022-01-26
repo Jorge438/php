@@ -84,6 +84,7 @@ img {
     $salas = [
         "name" => "Marcelo Salas jersey",
         "price" => format_price(79900),
+        "price_excl_tax" => price_excluding_vat(format_price(79900)),
         "weight" => 110,
         "discount" => null,
         "picture_url" => "img/salas.jpg"
@@ -98,7 +99,8 @@ img {
   <div class="first">
         <h1> <?php echo $salas["name"] ?> </h1>
         <img src=" <?php echo $salas["picture_url"] ?>" alt="">
-        <p> <?php echo $salas["price"] ?> € </p>
+        <p> <?php echo $salas["price"] ?> € TTC</p>
+        <p> <?php echo $salas["price_excl_tax"] ?> € HT</p>
         <p> <?php echo $salas["discount"]?></p>
         <p> <?php echo $salas["weight"] ?> grammes </p>
     </div> 
