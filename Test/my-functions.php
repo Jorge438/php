@@ -8,4 +8,9 @@
         $price_excl_tax = (100*$price_incl_tax)/(100+10);
         return $price_excl_tax;
     }
+
+    function displayDiscountedPrice($price, $discount) {
+        $discounted_price = $price*(1-($discount/100));
+        return $discounted_price;
+    }
 ?>
