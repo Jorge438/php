@@ -77,6 +77,8 @@ img {
     </style>
 </head>
 <body>
+
+<?php include 'my-functions.php' ?>
     
 <?php
     $salas = [
@@ -87,13 +89,6 @@ img {
         "picture_url" => "img/salas.jpg"
     ]
         
-?>
-
-<?php 
-    function format_price($price_in_cents) {
-        $price_in_cents = $price_in_cents/100;
-        return $price_in_cents;
-    }
 ?>
 
 <?php include 'header.php' ?>
