@@ -79,6 +79,37 @@ img {
     width : 450px;
     height: 500px;
 }
+
+.first, .second, .third {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.btn_commander {
+    margin-top: -5rem;
+    width: 50%;
+    background-color: #607DFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.before_red {
+    color: red;
+    text-decoration:line-through;
+}
+
+.after_red {
+    color: lightgreen;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
     </style>
 </head>
 <body>
@@ -129,45 +160,66 @@ img {
 <main>
 
     <div class="first">
-        <h1> <?php echo $products["sanchez"]["name"] ?> </h1>
-        <img src=" <?php echo $products["sanchez"]["picture_url"] ?>" alt="">
-        <p> <?php echo $products["sanchez"]["price"] ?> € TTC</p>
-        <p> <?php echo $products["sanchez"]["price_excl_tax"] ?> € HT</p>
-        <p> <?php echo $products["sanchez"]["discount"]?> % de réduction</p>
-        <p> <?php echo $products["sanchez"]["price_after_discount"]?> € apres réduction</p>
-        <p> <?php echo $products["sanchez"]["weight"] ?> grammes </p>
+
+        <div class="one">
+            <img src=" <?php echo $products["sanchez"]["picture_url"] ?>" alt="">
+        </div>
+
+        <div class="two">
+            <h1> <?php echo $products["sanchez"]["name"] ?> </h1>
+            <p class="before_red"> <?php echo $products["sanchez"]["price"] ?> € TTC  </p> 
+            <p> - <?php echo $products["sanchez"]["discount"]?> %</p>
+            <p class="after_red"> <?php echo $products["sanchez"]["price_after_discount"]?> € TTC </p>
+            <p> <?php echo $products["sanchez"]["weight"] ?> grammes </p>
+            <form>
+                <div>Quantité : <input type="number" id="medel_shirt" name="medel_shirt" min="1" max="10" placeholder="1"></div> 
+                <br>
+                <input type="submit" value="Commander" class="btn_commander">  
+            </form>  
+        </div>
+
     </div>
 
     <div class="second">
-        <h1> <?php echo $products["salas"]["name"] ?> </h1>
-        <img src=" <?php echo $products["salas"]["picture_url"] ?>" alt="">
-        <p> <?php echo $products["salas"]["price"] ?> € TTC</p>
-        <p> <?php echo $products["salas"]["price_excl_tax"] ?> € HT</p>
-        <p> <?php echo $products["salas"]["discount"]?> % de réduction</p>
-        <p> <?php echo $products["salas"]["price_after_discount"]?> € apres réduction</p>
-        <p> <?php echo $products["salas"]["weight"] ?> grammes </p>
+
+        <div class="one">
+            <img src=" <?php echo $products["salas"]["picture_url"] ?>" alt="">
+        </div>
+        <div class="two">
+            <h1> <?php echo $products["salas"]["name"] ?> </h1>
+            <p class="before_red"> <?php echo $products["salas"]["price"] ?> € TTC  </p> 
+            <p> - <?php echo $products["salas"]["discount"]?> %</p>
+            <p class="after_red"> <?php echo $products["salas"]["price_after_discount"]?> € TTC </p>
+            <p> <?php echo $products["salas"]["weight"] ?> grammes </p>
+            <form>
+                <div>Quantité : <input type="number" id="medel_shirt" name="medel_shirt" min="1" max="10" placeholder="1"></div> 
+                <br>
+                <input type="submit" value="Commander" class="btn_commander">  
+            </form>  
+        </div>
     </div>
 
     <div class="third">
-        <h1> <?php echo $products["medel"]["name"] ?> </h1>
-        <img src=" <?php echo $products["medel"]["picture_url"] ?>" alt="">
-        <p> <?php echo $products["medel"]["price"] ?> € TTC</p>
-        <p> <?php echo $products["medel"]["price_excl_tax"] ?> € HT</p>
-        <p> <?php echo $products["medel"]["discount"]?> % de réduction</p>
-        <p> <?php echo $products["medel"]["price_after_discount"]?> € apres réduction</p>
-        <p> <?php echo $products["medel"]["weight"] ?> grammes </p>
+        <div class="one">
+            <img src=" <?php echo $products["medel"]["picture_url"] ?>" alt="">
+        </div>
+
+        <div class="two">
+            <h1> <?php echo $products["medel"]["name"] ?> </h1>
+            <p class="before_red"> <?php echo $products["medel"]["price"] ?> € TTC  </p> 
+            <p> - <?php echo $products["medel"]["discount"]?> %</p>
+            <p class="after_red"> <?php echo $products["medel"]["price_after_discount"]?> € TTC </p>
+            <p> <?php echo $products["medel"]["weight"] ?> grammes </p>
+            <form>
+                <div>Quantité : <input type="number" id="medel_shirt" name="medel_shirt" min="1" max="10" placeholder="1"></div> 
+                <br>
+                <input type="submit" value="Commander" class="btn_commander">  
+            </form>  
+        </div>
+
     </div>
 
-    <p>
-
-        <?php foreach ($products as $player) {
-            foreach($player as $description => $detail) {
-                echo " $player | $description : $detail " . "<br>";
-            }
-             echo "<br>";
-        }
-        ?>
-    </p>
+    
 
 </main>
 
@@ -177,3 +229,15 @@ img {
 
 </body>
 </html>
+
+<!--    <p>
+
+       <?php /* foreach ($products as $player) {
+            foreach($player as $description => $detail) {
+                echo " $player | $description : $detail " . "<br>";
+            }
+             echo "<br>";
+        }
+        */ ?>
+        </p>
+    -->
