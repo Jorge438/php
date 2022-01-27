@@ -171,7 +171,7 @@ form {
             <p> - <?php echo $products["sanchez"]["discount"]?> %</p>
             <p class="after_red"> <?php echo $products["sanchez"]["price_after_discount"]?> € TTC </p>
             <p> <?php echo $products["sanchez"]["weight"] ?> grammes </p>
-            <form>
+            <form method="post" action="cart.php">
                 <div>Quantité : <input type="number" id="sanchez_shirt" name="sanchez_shirt" min="1" max="10" placeholder="1"></div> 
                 <br>
                 <input type="submit" value="Commander" class="btn_commander">  
@@ -191,7 +191,7 @@ form {
             <p> - <?php echo $products["salas"]["discount"]?> %</p>
             <p class="after_red"> <?php echo $products["salas"]["price_after_discount"]?> € TTC </p>
             <p> <?php echo $products["salas"]["weight"] ?> grammes </p>
-            <form>
+            <form method="post" action="cart.php">
                 <div>Quantité : <input type="number" id="salas_shirt" name="salas_shirt" min="1" max="10" placeholder="1"></div> 
                 <br>
                 <input type="submit" value="Commander" class="btn_commander">  
@@ -210,7 +210,7 @@ form {
             <p> - <?php echo $products["medel"]["discount"]?> %</p>
             <p class="after_red"> <?php echo $products["medel"]["price_after_discount"]?> € TTC </p>
             <p> <?php echo $products["medel"]["weight"] ?> grammes </p>
-            <form>
+            <form method="post" action="cart.php">
                 <div>Quantité : <input type="number" id="medel_shirt" name="medel_shirt" min="1" max="10" placeholder="1"></div> 
                 <br>
                 <input type="submit" value="Commander" class="btn_commander">  
