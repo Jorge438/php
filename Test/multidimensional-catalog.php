@@ -172,7 +172,7 @@ form {
             <p class="after_red"> <?php echo $products["sanchez"]["price_after_discount"]?> € TTC </p>
             <p> <?php echo $products["sanchez"]["weight"] ?> grammes </p>
             <form>
-                <div>Quantité : <input type="number" id="medel_shirt" name="medel_shirt" min="1" max="10" placeholder="1"></div> 
+                <div>Quantité : <input type="number" id="sanchez_shirt" name="sanchez_shirt" min="1" max="10" placeholder="1"></div> 
                 <br>
                 <input type="submit" value="Commander" class="btn_commander">  
             </form>  
@@ -192,7 +192,7 @@ form {
             <p class="after_red"> <?php echo $products["salas"]["price_after_discount"]?> € TTC </p>
             <p> <?php echo $products["salas"]["weight"] ?> grammes </p>
             <form>
-                <div>Quantité : <input type="number" id="medel_shirt" name="medel_shirt" min="1" max="10" placeholder="1"></div> 
+                <div>Quantité : <input type="number" id="salas_shirt" name="salas_shirt" min="1" max="10" placeholder="1"></div> 
                 <br>
                 <input type="submit" value="Commander" class="btn_commander">  
             </form>  
@@ -218,8 +218,6 @@ form {
         </div>
 
     </div>
-
-    
 
 </main>
 
