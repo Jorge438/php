@@ -1,0 +1,11 @@
+
+
+    foreach($products as $key=>$detail){
+        var_dump($detail["name"]);
+        echo "<img src=" . " $detail["picture_url"] ". " alt="photo">";
+        echo "<h1>" . $detail["name"] . "</h1>";
+        echo "<h1>" . $detail["name"] . "</h1>";
+
+        echo "<br>";
+    }
+    echo "<br>";
