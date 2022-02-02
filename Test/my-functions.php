@@ -25,4 +25,13 @@
             return 0;
         }
     }
+
+    function exist($array ,$name){
+        foreach($array as $player){
+            if($player == $name){
+                return true;
+            }
+        }
+        return false;
+    }
 ?>

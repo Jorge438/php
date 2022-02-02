@@ -37,14 +37,14 @@
           //  echo 'salas_shirt : ' .$_POST["salas_shirt"].'<br>';
           //  echo 'medel_shirt : ' .$_POST["medel_shirt"].'<br>';
           
-          if(is_numeric($_POST["quantity"]))
+          if(is_numeric($_POST["quantity"]) && exist($products, $products[$_POST["shirt_name"]]))
             {
                 $quantity = $_POST["quantity"]; 
                 $shirt_name = $_POST["shirt_name"];
                 $totalweight = $quantity * $products["$shirt_name"]["weight"];
                 $totalprice_TTC = $quantity *  displayDiscountedPrice(format_price($products["$shirt_name"]["price"]),$products["$shirt_name"]["discount"]);
                 $price_excl_tax = price_excluding_vat(displayDiscountedPrice(format_price($products["$shirt_name"]["price"]),$products["$shirt_name"]["discount"]));
-                var_dump($price_excl_tax);
+
     ?>
                 <table>
             <thead>
@@ -106,7 +106,7 @@
             
             }
             else {
-                echo "<p> Sorry we only accept digit </p>";
+                echo "<p> Sorry there is an error </p>";
             }
           
 
