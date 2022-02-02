@@ -31,26 +31,22 @@
     
     <?php include 'my-functions.php' ?>
     <?php include 'data.php' ?>
-
-        <p>Dans le formulaire précédent, vous avez fourni les
-        informations suivantes :</p>
         
         <?php 
           //  echo 'sanchez_shirt : '.$_POST["sanchez_shirt"].'<br>';
           //  echo 'salas_shirt : ' .$_POST["salas_shirt"].'<br>';
           //  echo 'medel_shirt : ' .$_POST["medel_shirt"].'<br>';
           
-          $quantity = $_POST["quantity"]; 
-          $shirt_name = $_POST["shirt_name"];
-          $totalweight = $quantity * $products["$shirt_name"]["weight"];
-          $totalprice_TTC = $quantity *  $products["$shirt_name"]["price_after_discount"];
-          var_dump($totalweight);
-          var_dump($totalprice_TTC);
-        ?>
-            
-        
-
-        <table>
+          if(is_numeric($_POST["quantity"]))
+            {
+                $quantity = $_POST["quantity"]; 
+                $shirt_name = $_POST["shirt_name"];
+                $totalweight = $quantity * $products["$shirt_name"]["weight"];
+                $totalprice_TTC = $quantity *  displayDiscountedPrice(format_price($products["$shirt_name"]["price"]),$products["$shirt_name"]["discount"]);
+                $price_excl_tax = price_excluding_vat(displayDiscountedPrice(format_price($products["$shirt_name"]["price"]),$products["$shirt_name"]["discount"]));
+                var_dump($price_excl_tax);
+    ?>
+                <table>
             <thead>
                 <tr>
                     <th colspan="1">Produit</th>
@@ -62,29 +58,29 @@
             <tbody>
                 <tr>
                     <td><?php echo $products["$shirt_name"]["name"]; ?></td>
-                    <td><?php echo "<div class='before_reduc'>" . $products["$shirt_name"]["price"] . " €"  . "  -" . $products["$shirt_name"]["discount"] . "%" . "</div>" ."<br>";
-                              echo "<div class='after_reduc'>" . $products["$shirt_name"]["price_after_discount"] . " €" . "</div>" . "<br>"; 
+                    <td><?php echo "<div class='before_reduc'>" . format_price($products["$shirt_name"]["price"]) . " €"  . "  -" . $products["$shirt_name"]["discount"] . "%" . "</div>" ."<br>";
+                              echo "<div class='after_reduc'>" . displayDiscountedPrice(format_price($products["$shirt_name"]["price"]),$products["$shirt_name"]["discount"]) . " €" . "</div>" . "<br>"; 
                               ?></td>
                     <td> <?php echo $quantity; ?> </td>
-                    <td> <?php echo $quantity *  $products["$shirt_name"]["price_after_discount"] . " €"; ?></td>
+                    <td> <?php echo $quantity *  displayDiscountedPrice(format_price($products["$shirt_name"]["price"]),$products["$shirt_name"]["discount"]) . " €"; ?></td>
                 </tr>
                 <tr>
                     <td> </td>
                     <td> </td>
                     <td>Total HT</td>
-                    <td> <?php echo $quantity *  $products["$shirt_name"]["price_excl_tax"] . " €"; ?> </td>
+                    <td> <?php echo $quantity *  price_excluding_vat(displayDiscountedPrice(format_price($products["$shirt_name"]["price"]),$products["$shirt_name"]["discount"])) . " €"; ?> </td>
                 </tr>
                 <tr>
                     <td> </td>
                     <td> </td>
                     <td>TVA</td>
-                    <td> <?php echo ($quantity *  $products["$shirt_name"]["price_after_discount"]) - ($quantity *  $products["$shirt_name"]["price_excl_tax"]) . " €"; ?> </td>
+                    <td> <?php echo ($quantity *  displayDiscountedPrice(format_price($products["$shirt_name"]["price"]),$products["$shirt_name"]["discount"])) - ($quantity *  price_excluding_vat(displayDiscountedPrice(format_price($products["$shirt_name"]["price"]),$products["$shirt_name"]["discount"]))) . " €"; ?> </td>
                 </tr>
                 <tr>
                     <td> </td>
                     <td> </td>
                     <td>Total TTC</td>
-                    <td><?php echo $quantity *  $products["$shirt_name"]["price_after_discount"] . " €"; ?> </td>
+                    <td><?php echo $totalprice_TTC . " €"; ?> </td>
                 </tr>
             </tbody>
         </table>
@@ -103,6 +99,24 @@
             <p> vous avez choisit : <?php echo $carrier ?> </p>
             <p> Frais de port : <?php echo shipping_fees($totalweight,$totalprice_TTC, $carrierlist["$carrier"]["neutral_price"]);?> € </p>
             <p> Total de votre commande : <?php echo shipping_fees($totalweight,$totalprice_TTC,$carrierlist["$carrier"]["neutral_price"])+$totalprice_TTC;?> € </p>
+            
+            
+
+            <?php
+            
+            }
+            else {
+                echo "<p> Sorry we only accept digit </p>";
+            }
+          
+
+
+          
+        ?>
+            
+        
+
+        
 
     </body>
 </html>

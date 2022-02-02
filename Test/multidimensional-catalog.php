@@ -132,13 +132,13 @@ form {
 <div class="two">
     <h1> <?php echo $products["sanchez"]["name"] ?> </h1>
     <p class="before_reduc
-"> <?php echo $products["sanchez"]["price"] ?> € TTC  </p> 
+"> <?php echo format_price($products["sanchez"]["price"]) ?> € TTC  </p> 
     <p> - <?php echo $products["sanchez"]["discount"]?> %</p>
     <p class="after_reduc
-"> <?php echo $products["sanchez"]["price_after_discount"]?> € TTC </p>
+"> <?php echo displayDiscountedPrice(format_price($products["sanchez"]["price"]),$products["sanchez"]["discount"])?> € TTC </p>
     <p> <?php echo $products["sanchez"]["weight"] ?> grammes </p>
     <form method="post" action="cart.php">
-    <div>Quantité : <input type="number" name="quantity" min="1" max="10" placeholder="1"></div> 
+    <div>Quantité : <input type="number" name="quantity" min="0" max="10" placeholder="1"></div> 
     <br>
     <input type="submit" value="Commander" class="btn_commander">
     <input type="hidden" name="shirt_name" value="sanchez"/> 
@@ -155,13 +155,13 @@ form {
 <div class="two">
     <h1> <?php echo $products["salas"]["name"] ?> </h1>
     <p class="before_reduc
-"> <?php echo $products["salas"]["price"] ?> € TTC  </p> 
+"> <?php echo format_price($products["salas"]["price"]) ?> € TTC  </p> 
     <p> - <?php echo $products["salas"]["discount"]?> %</p>
     <p class="after_reduc
-"> <?php echo $products["salas"]["price_after_discount"]?> € TTC </p>
+"> <?php echo displayDiscountedPrice(format_price($products["salas"]["price"]),$products["salas"]["discount"])?> € TTC </p>
     <p> <?php echo $products["salas"]["weight"] ?> grammes </p>
     <form method="post" action="cart.php">
-        <div>Quantité : <input type="number" name="quantity" min="1" max="10" placeholder="1"></div> 
+        <div>Quantité : <input type="number" name="quantity" min="0" max="10" placeholder="1"></div> 
         <br>
         <input type="submit" value="Commander" class="btn_commander">
         <input type="hidden" name="shirt_name" value="salas"/> 
@@ -177,13 +177,13 @@ form {
 <div class="two">
     <h1> <?php echo $products["medel"]["name"] ?> </h1>
     <p class="before_reduc
-"> <?php echo $products["medel"]["price"] ?> € TTC  </p> 
+"> <?php echo format_price($products["medel"]["price"]) ?> € TTC  </p> 
     <p> - <?php echo $products["medel"]["discount"]?> %</p>
     <p class="after_reduc
-"> <?php echo $products["medel"]["price_after_discount"]?> € TTC </p>
+"> <?php echo displayDiscountedPrice(format_price($products["medel"]["price"]),$products["medel"]["discount"])?> € TTC </p>
     <p> <?php echo $products["medel"]["weight"] ?> grammes </p>
     <form method="post" action="cart.php">
-        <div>Quantité : <input type="number" name="quantity" min="1" max="10" placeholder="1"></div> 
+        <div>Quantité : <input type="number" name="quantity" min="0" max="10" placeholder="1"></div> 
         <br>
         <input type="submit" value="Commander" class="btn_commander">
         <input type="hidden" name="shirt_name" value="medel"/> 
