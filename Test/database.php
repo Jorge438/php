@@ -55,11 +55,17 @@ function Query_delete_product_id_50 ($db) {
         return $productsStatement->fetchAll();
 }
 
-function Number_of_product ($db) {
-        $productsStatement = $db->prepare('SELECT * FROroducts');
+function all_product ($db) {
+        $productsStatement = $db->prepare('SELECT * FROM products');
         $productsStatement->execute();
         return $productsStatement->fetchAll();
 }
+
+function order_product_id50($db) {
+        $productsStatement = $db->query('SELECT * FROM order_product WHERE order_id = 50');
+        return $productsStatement->fetchAll();
+}
+
 
 
 
