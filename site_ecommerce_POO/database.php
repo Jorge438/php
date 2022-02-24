@@ -10,8 +10,8 @@ catch (Exception $e)
 
 function Query_list_of_product_stock_0 ($db) {
         $productsStatement = $db->prepare('SELECT * FROM `products` WHERE products.quantity = "0"');
-        $productsStatement->execute();
-        return $productsStatement->fetchAll();
+      $productsStatement->execute();
+       return $productsStatement->fetchAll();
 }
 
 function Query_list_of_order_since_ten_days ($db) {
